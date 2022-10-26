@@ -2,7 +2,7 @@
     <html lang="es">
         <head>
             <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
             <meta name="description" content="Este es el currículum vitae de Giancarlo Carvajal Flor">
             <meta name="keywords" content="Giancarlo Carvajal Flor, portafolio, currículum vitae, CV, proyecto DAWM, espol">
             <title>CV - Giancarlo Carvajal Flor</title>
@@ -10,13 +10,14 @@
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Merriweather&display=swap" rel="stylesheet">
-
         </head>
         <body>
             <header>
                 <header id="super_header">
                     <img src="img/left_silhouette.svg" id="left_silh">
                     <img src="img/right_silhouette.svg" id="right_silh">
+                    <div id="octagon"></div>
+                    <div id="photo_shadow"><img src="img/giancarlo_carvajal_flor.JPG" id="photo"></div>
                 </header>
                 <section id="header_grid">
                     <section id="contact_info">
@@ -25,10 +26,10 @@
                                 Giancarlo Carvajal Flor
                             </li>
                             <li>
-                                gianflor@espol.edu.ec
+                                <img src="img/email.svg">gianflor@espol.edu.ec
                             </li>
                             <li>
-                                +593 0959924230
+                                <img src="img/phone.svg">+593 0959924230
                             </li>
                         </ul>
                     </section>
@@ -37,12 +38,18 @@
                             <li>
                                 Redes Sociales
                             </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/giancarlo-carvajal-flor-309897211/" target="_blank"><img src="img/linkedin.svg"></a>
+                                <a href="https://www.facebook.com/giancarlo.carvajalflor" target="_blank"><img src="img/facebook.svg"></a>
+                                <a href="https://www.instagram.com/mega_gian/" target="_blank"><img src="img/instagram.svg"></a>
+                            </li>
                         </ul>
                     </section>
                 </section>
             </header>
             <section class="main_grid">
                 <section class="one">
+                    <span id="span_one"></span>
                     <header>
                         <h2>Acerca de mí</h2>
                     </header>
@@ -51,39 +58,44 @@
                             <li>
                                 <table>
                                     <tr>
-                                        <th></th>
+                                        <th rowspan="3"><img id="age_country" src="img/age_country.svg"></th>
                                         <th>Lugar y Fecha de Nacimiento</th>
                                     </tr>
                                     <tr>
-                                        <td></td>
                                         <td>Guayaquil, Guayas, Ecuador</td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>18 de Agosto, año 2000</td>
+                                        <td><img id="cake" src="img/cake.svg">18 de Agosto, año 2000</td>
                                     </tr>
                                 </table>
                             </li>
                             <li>
                                 <table class="highlighted_table">
                                     <tr>
-                                        <th>Idioma</th>
-                                        <th>Nivel</th>
+                                        <th>Idiomas</th>
+                                        <th></th>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>Nativo</td>
+                                        <td id="flag_container"><img id="flag" src="img/spanish.svg"></td>
+                                        <td>
+                                            Nativo
+                                            <audio controls="yes">
+                                                <source src="media/audio.mp3" type="audio/mpeg">
+                                            </audio>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>A1 A2 B1 B2 C1 C2</td>
+                                        <td id="flag_container"><img id="flag" src="img/english.svg"></td>
+                                        <td id="levels">A1 A2 B1 <span id="B2">B2</span> C1 C2</td>
                                     </tr>
                                 </table>
                             </li>
                         </ul>
                     </article>
+                    </span>
                 </section>
                 <section class="two">
+                    <span id="span_two">
                     <header>
                         <h2>Reconocimientos</h2>
                     </header>
@@ -92,43 +104,42 @@
                             <li>
                                 <table>
                                     <tr>
-                                        <th></th>
-                                        <th>Nombre de la institución - (año)</th>
+                                        <th rowspan="2"><img src="img/normal_ack.svg"></th>
+                                        <th>U.E. Santa Mariana de Jesús<br>2018 y 2019</th>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>Reconocimiento Uno</td>
+                                        <td>Spelling Bee Contest Winner</td>
                                     </tr>
                                 </table>
                             </li>
                             <li>
                                 <table>
                                     <tr>
-                                        <th></th>
-                                        <th>Nombre de la institución - (año)</th>
+                                        <th rowspan="2"><img src="img/normal_ack.svg"></th>
+                                        <th>U.E. San Cayetano de Chone<br>2018-2019</th>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>Reconocimiento Dos</td>
+                                        <td>Abanderado de la Institución</td>
                                     </tr>
                                 </table>
                             </li>
                             <li>
                                 <table class="highlighted_table">
                                     <tr>
-                                        <th></th>
-                                        <th>Nombre de la institución - (año)</th>
+                                        <th rowspan="2"><img src="img/high_ack.svg"></th>
+                                        <th>U.E. San Cayetano de Chone<br>2018-2019</th>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>Reconocimiento Destacado</td>
+                                        <td>Mejor Egresado de la Promoción</td>
                                     </tr>
                                 </table>
                             </li>
                         </ul>
                     </article>
+                    </span>
                 </section>
                 <section class="three">
+                    <span id="span_three">
                     <header>
                         <h2>Formación Académica</h2>
                     </header>
@@ -137,31 +148,36 @@
                             <li>
                                 <table>
                                     <tr>
-                                        <th></th>
-                                        <th>Nombre de la institución - (año)</th>
+                                        <th rowspan="2"><img src="img/normal_title.svg"></th>
+                                        <th>U.E. San Cayetano de Chone<br>2019</th>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>Título Uno</td>
+                                        <td>Bachillerato Técnico en Informática</td>
                                     </tr>
                                 </table>
                             </li>
                             <li>
                                 <table>
                                     <tr>
-                                        <th></th>
-                                        <th>Nombre de la institución - (año)</th>
+                                        <th rowspan="2"><img src="img/ongoing_title.svg"></th>
+                                        <th>Escuela Superior Politécnica del Litoral<br>(en curso)</th>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td>Título Dos</td>
+                                        <td>Ingeniería en Computación</td>
                                     </tr>
                                 </table>
                             </li>
+                            <li>
+                                <video controls="yes">
+                                    <source src="media/video.mp4" type="video/mp4">
+                                </video>
+                            </li>
                         </ul>
                     </article>
+                    </span>
                 </section>
                 <section class="four">
+                    <span id="span_four">
                     <header>
                         <h2>Experiencia Profesional</h2>
                     </header>
@@ -170,39 +186,55 @@
                             <li>
                                 <table>
                                     <tr>
-                                        <th>Empresa/Institución<br>(años inicio-fin)</th>
+                                        <th>Escuela Superior Politécnica del Literal<br>2021-2022</th>
                                     </tr>
                                     <tr>
-                                        <td>Cargo Desempeñado</td>
+                                        <td><br>Ayudante de Docencia (POO)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/teacher.svg"></td>
                                     </tr>
                                 </table>
                             </li>
                             <li>
                                 <table class="highlighted_table">
                                     <tr>
-                                        <th>Empresa/Institución<br>(años inicio-fin)</th>
+                                        <th>Escuela Superior Politécnica del Literal<br>(en curso)</th>
                                     </tr>
                                     <tr>
-                                        <td>Cargo Destacado</td>
+                                        <td><br>Ayudante de Investigación (RAP)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="img/gitlab.svg"></td>
                                     </tr>
                                 </table>
                             </li>
                         </ul>
                     </article>
+                    </span>
                 </section>
             </section>
-            <section>
+            <section id="contact">
                 <header>
                     <h2>Contactáctame</h2>
                 </header>
                 <form>
-                    <label for="email">E-mail</label><br>
-                    <input type="text" id="email"><br>
-                    <label>Mensaje</label><br>
-                    <textarea name="message" rows="10" cols="50"></textarea><br>
-                    <label>Lugar de su empresa/institución:</label><br>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26820.826420731162!2d-79.91445661539728!3d-2.1766033240247533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1665588885122!5m2!1ses!2sec" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
-                    <button type="submit">Enviar</button>
+                    <section>
+                        <div>
+                            <label for="email">E-mail</label><br>
+                            <input type="text" id="email"><br>
+                            <label>Mensaje</label><br>
+                            <textarea name="message" rows="6" cols="50"></textarea><br>
+                        </div>
+                        <div>
+                            <label>Lugar de su empresa/institución:</label><br>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26820.826420731162!2d-79.91445661539728!3d-2.1766033240247533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1665588885122!5m2!1ses!2sec" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                        </div>
+                    </section>
+                    <div id="buttons">
+                        <button type="reset">Borrar</button>
+                        <button type="submit">Enviar</button>
+                    </div>
                 </form>
             </section>
             <footer>
