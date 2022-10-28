@@ -418,13 +418,6 @@ iframe {
     border: 0;
 }
 
-#buttons button:hover {
-    cursor: pointer;
-    color: var(--color-3);
-    background-color: var(--color-2);
-    box-shadow: 0 0 0.5em 0 black;
-}
-
 footer {
     height: 8em;
     background-color: var(--color-3);
