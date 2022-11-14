@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegant Dashboard | Dashboard</title>
+  <title>Urban Analyst</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
@@ -42,6 +42,9 @@
                     <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
+                  <a href="https://developers.teleport.org/" target="_blank"><span class="icon star"></span>Teleport API</a>
+                </li>
+                <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon document" aria-hidden="true"></span>Charts
                         <span class="category__btn transparent-btn" title="Open list">
@@ -51,10 +54,10 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="posts.html">All Posts</a>
+                            <a href="https://canvasjs.com/html5-javascript-bar-chart/" target="_blank">Bar Chart</a>
                         </li>
                         <li>
-                            <a href="new-post.html">Add new post</a>
+                            <a href="new-post.html">Stacked Area Chart</a>
                         </li>
                     </ul>
                 </li>
@@ -86,14 +89,23 @@
       <div class="container">
         <h2 class="main-title">Dashboard</h2>
         <div class="row stat-cards">
-          <div class="col-md-6 col-xl-5">
+          <div class="col-md-6 col-xl-6">
               <div class="stat-cards-item" id="ua-selector-card">
-                Select Placeholder
+                <select class="form-select" id="ua_selector" aria-label="Urban Area Selector">
+                  <option disabled selected>Choose an urban area</option>
+                </select>
               </div>
           </div>
-          <div class="col-md-6 col-xl-7">
+          <div class="col-md-6 col-xl-6">
             <div class="stat-cards-item" id="job-stacker-card">
               Job Stacker Placeholder
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="chart">
+              <div id="scores-chart"></div>
             </div>
           </div>
         </div>
@@ -103,13 +115,10 @@
     <footer class="footer">
   <div class="container footer--flex">
     <div class="footer-start">
-      <p>2021 © Elegant Dashboard - <a href="elegant-dashboard.com" target="_blank"
-          rel="noopener noreferrer">elegant-dashboard.com</a></p>
+      <p>2022-2023 PAO - DAWM - ESPOL
     </div>
     <ul class="footer-end">
-      <li><a href="##">About</a></li>
-      <li><a href="##">Support</a></li>
-      <li><a href="##">Puchase</a></li>
+      <li><a href="https://giancarlocarvajal.web.app/" target="_blank">Giancarlo Carvajal Flor</a></li>
     </ul>
   </div>
 </footer>
@@ -117,6 +126,7 @@
 </div>
 <!-- Chart library -->
 <script src="./plugins/chart.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!-- Icons library -->
 <script src="plugins/feather.min.js"></script>
 <!-- Custom scripts -->

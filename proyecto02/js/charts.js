@@ -2,11 +2,35 @@
 window.addEventListener('DOMContentLoaded', () => {
 
     loadUrbanAreas();
-    //attachScores();
+    attachScores();
 
 });
 
+let newScoresChart = () => {
+    return new CanvasJS.Chart("scores-chart", {
+
+        animationEnabled: true,
+    
+        axisX:{
+            interval: 1
+        },
+        axisY2:{
+            interlacedColor: "rgba(31, 134, 65,.1)",
+            gridColor: "rgba(1,77,101,.1)",
+            title: "Score out of 10"
+        },
+        data: [{
+            type: "bar",
+            name: "scores",
+            axisYType: "secondary",
+            color: "rgb(16, 100, 44)",
+            dataPoints: []
+        }]
+    })
+}
+
 let ua_selector = document.getElementById("ua_selector");
+let scores_chart = newScoresChart();
 
 loadUrbanAreas = async () => {
 
@@ -29,6 +53,9 @@ attachScores = () => {
 
     ua_selector.addEventListener("change", async (event) => {
 
+        scores_chart.destroy()
+        scores_chart = newScoresChart();
+
         let api_URL = event.target.value.concat("scores/")
 
         let response = await fetch(api_URL);
@@ -36,22 +63,10 @@ attachScores = () => {
 
         let categories = data["categories"];
 
-        let score_table = document.getElementById("score_table");
-        score_table.innerHTML = 
-        `
-        <tr>
-            <th>Category</th>
-            <th>Score out of 10</th>
-        </tr>
-        `
         categories.forEach(category => {
-            score_table.innerHTML += 
-            `
-            <tr>
-                <td align="right" style="border-color: white;">${category.name}</td>
-                <td style="border-color: ${category.color};">${category.score_out_of_10}</td>
-            </tr>
-            `
+            scores_chart.options.data[0].dataPoints.unshift({y: category.score_out_of_10, label: category.name})
         });
+
+        scores_chart.render();
     });
 }

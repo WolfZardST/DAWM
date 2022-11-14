@@ -5,3 +5,8 @@
 body {
     background-color: rgb(241, 255, 245);
 }
+
+.chart {
+    margin-top: 1.5em;
+    border-radius: 1em;
+}
