@@ -1,5 +1,7 @@
 
 let jobsData = []
+let pickedJobs = []
+let pickedJobsCards = []
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -48,8 +50,9 @@ let newJobsChart = () => {
             text: "Jobs Salaries Per Year"
         },
         axisY :{
-            valueFormatString: "#0,.",
-            suffix: "k"
+            minimum: 0,
+            valueFormatString: "$ #0,.",
+            suffix: "k",
         },
         axisX: {
             title: "Percentiles"
@@ -63,7 +66,7 @@ let newJobsChart = () => {
 
 let loadUrbanAreas = async () => {
 
-    let local_URL = "http://localhost:3000/api.local/urban_areas.json";
+    let local_URL = "https://api.teleport.org/api/urban_areas/";
 
     let response = await fetch(local_URL);
     let data = await response.json();
@@ -98,6 +101,19 @@ let attachScores = (ua_selector, scores_chart) => {
 
         scores_chart.render();
 
+        api_URL = event.target.value.concat("images/")
+
+        response = await fetch(api_URL);
+        data = await response.json();
+
+        let image = data.photos[0].image.web;
+
+        document.querySelector('body').style.cssText = 
+        `
+        background-image: url("${image}");
+        background-repeat: no-repeat;
+        background-size: contain;
+        `;
     });
 }
 
@@ -107,7 +123,6 @@ let attachJobs = (ua_selector, job_selector, jobs_chart) => {
 
         jobs_chart.destroy();
         jobsData = [];
-        jobs_chart = newJobsChart();
 
         let api_URL = event.target.value.concat("salaries/")
 
@@ -125,17 +140,71 @@ let attachJobs = (ua_selector, job_selector, jobs_chart) => {
 
             job_selector.innerHTML += 
             `
-            <option value='{"title":" ${job["job"].title}", "p_25": ${percentiles.percentile_25}, "p_50": ${percentiles.percentile_50}, "p_75": ${percentiles.percentile_75}}'>${job["job"].title}</option>
+            <option value='{"title":"${job["job"].title}", "p_25": ${percentiles.percentile_25}, "p_50": ${percentiles.percentile_50}, "p_75": ${percentiles.percentile_75}}'>${job["job"].title}</option>
             `
+
+            if(pickedJobs.includes(job["job"].title)) {
+
+                let jobData = {        
+                    type: "stackedArea",
+                    showInLegend: true,
+                    name: `${job["job"].title}`,
+                    dataPoints: [
+                    { x: 25, y: percentiles.percentile_25 },
+                    { x: 50, y: percentiles.percentile_50 },
+                    { x: 75, y: percentiles.percentile_75 }
+                    ]
+                }
+                
+                jobsData.push(jobData);
+            }
         });
+
+        jobs_chart = newJobsChart();
+        jobs_chart.render();
 
     });
 
     job_selector.addEventListener("change", (event) => {
 
-        jobs_chart.destroy();
-
         let job = JSON.parse(event.target.value);
+
+        if (pickedJobs.includes(job.title)) return;
+        if (pickedJobs.length === 4) {
+            pickedJobs.shift();
+            pickedJobsCards.shift().remove();
+            jobsData.shift();
+        }
+
+        pickedJobs.push(job.title);
+
+        let jobsDiv = document.getElementById("jobs-picked");
+        const jobId = job.title.replace(/\s+/g, '');
+
+        jobsDiv.insertAdjacentHTML('beforeend',
+        `
+        <div class="card picked-job col-auto">
+            ${job.title}
+            <span class="job-remove-button icon cross" id="${jobId}"></span>
+        </div>
+        `);
+        let removeButton = document.getElementById(jobId);
+
+        pickedJobsCards.push(removeButton.parentNode);
+
+        removeButton.addEventListener("click", (event) => {
+            const index = pickedJobs.indexOf(job.title);
+
+            pickedJobs.splice(index, 1);
+            jobsData.splice(index, 1);
+
+            event.target.parentNode.remove();
+
+            jobs_chart.data = jobData;
+            jobs_chart.render();
+        });
+
+        jobs_chart.destroy();
 
         let jobData = {        
             type: "stackedArea",

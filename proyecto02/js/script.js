@@ -159,40 +159,6 @@ document.addEventListener('DOMContentLoaded', function () {
   })();
 
   (function () {
-    Chart.defaults.backgroundColor = '#000';
-    var darkMode = localStorage.getItem('darkMode');
-    var darkModeToggle = document.querySelector('.theme-switcher');
-
-    var enableDarkMode = function enableDarkMode() {
-      document.body.classList.add('darkmode');
-      localStorage.setItem('darkMode', 'enabled');
-    };
-
-    var disableDarkMode = function disableDarkMode() {
-      document.body.classList.remove('darkmode');
-      localStorage.setItem('darkMode', null);
-    };
-
-    if (darkMode === 'enabled') {
-      enableDarkMode();
-    }
-
-    if (darkModeToggle) {
-      darkModeToggle.addEventListener('click', function () {
-        darkMode = localStorage.getItem('darkMode');
-
-        if (darkMode !== 'enabled') {
-          enableDarkMode();
-        } else {
-          disableDarkMode();
-        }
-
-        addData();
-      });
-    }
-  })();
-
-  (function () {
     var checkAll = document.querySelector('.check-all');
     var checkers = document.querySelectorAll('.check');
 
@@ -284,26 +250,6 @@ document.addEventListener('DOMContentLoaded', function () {
       } finally {
         _iterator8.f();
       }
-    }
-  })();
-
-  (function () {
-    /* Add gradient to chart */
-    var width, height, gradient;
-
-    function getGradient(ctx, chartArea) {
-      var chartWidth = chartArea.right - chartArea.left;
-      var chartHeight = chartArea.bottom - chartArea.top;
-
-      if (gradient === null || width !== chartWidth || height !== chartHeight) {
-        width = chartWidth;
-        height = chartHeight;
-        gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-        gradient.addColorStop(0, 'rgba(255, 255, 255, 0)');
-        gradient.addColorStop(1, 'rgba(255, 255, 255, 0.4)');
-      }
-
-      return gradient;
     }
   })();
 });
