@@ -10,3 +10,9 @@ body {
     margin-top: 1.5em;
     border-radius: 1em;
 }
+
+@media (max-width: 1300px) {
+    .chart {
+        height: 370px;
+    }
+}

@@ -57,7 +57,7 @@
                             <a href="https://canvasjs.com/html5-javascript-bar-chart/" target="_blank">Bar Chart</a>
                         </li>
                         <li>
-                            <a href="new-post.html">Stacked Area Chart</a>
+                            <a href="https://canvasjs.com/javascript-charts/stacked-area-chart/" target="_blank">Stacked Area Chart</a>
                         </li>
                     </ul>
                 </li>
@@ -98,7 +98,9 @@
           </div>
           <div class="col-md-6 col-xl-6">
             <div class="stat-cards-item" id="job-stacker-card">
-              Job Stacker Placeholder
+              <select class="form-select" id="job_selector" aria-label="Job Selector">
+                <option disabled selected>Pick a job to display</option>
+              </select>
             </div>
           </div>
         </div>
@@ -108,11 +110,16 @@
               <div id="scores-chart"></div>
             </div>
           </div>
+          <div class="col-xl-6">
+            <div class="chart">
+              <div id="jobs-chart"></div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
     <!-- ! Footer -->
-    <footer class="footer">
+<footer class="footer">
   <div class="container footer--flex">
     <div class="footer-start">
       <p>2022-2023 PAO - DAWM - ESPOL
