@@ -3,9 +3,9 @@ Este repositorio alberga los proyectos desarrollados por el estudiante **Giancar
 
 PAO II, año lectivo 2022-2023, ESPOL.
 ## Proyectos
-| Proyecto      | Enlace | Deployment |
+| Proyecto      | Enlace | Despliegue |
 | :-----------: | :--: |:--:|
 | Currículum Vitae   | [Proyecto 01](proyecto01) |[giancarlocarvajal.web.app](https://giancarlocarvajal.web.app)|
-| Proyecto 2   | [Proyecto 02](proyecto02) |N.A|
+| Urban Analyst   | [Proyecto 02](proyecto02) |[urbanalyst.web.app](https://urbanalyst.web.app)|
 | Proyecto 3   | [Proyecto 03](proyecto03) |N.A|
 | Proyecto 4   | [Proyecto 04](proyecto04) |N.A|
