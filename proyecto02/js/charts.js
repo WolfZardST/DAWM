@@ -85,8 +85,10 @@ let attachScores = (ua_selector, scores_chart) => {
 
     ua_selector.addEventListener("change", async (event) => {
 
+        document.getElementById("scores-chart").classList.remove("animate__flipInX");
         scores_chart.destroy()
         scores_chart = newScoresChart();
+        document.getElementById("scores-chart").classList.add("animate__flipInX");
 
         let api_URL = event.target.value.concat("scores/")
 
@@ -183,7 +185,7 @@ let attachJobs = (ua_selector, job_selector, jobs_chart) => {
 
         jobsDiv.insertAdjacentHTML('beforeend',
         `
-        <div class="card picked-job col-auto">
+        <div class="animate__animated animate__flipInY card picked-job col-auto">
             ${job.title}
             <span class="job-remove-button icon cross" id="${jobId}"></span>
         </div>
@@ -192,16 +194,20 @@ let attachJobs = (ua_selector, job_selector, jobs_chart) => {
 
         pickedJobsCards.push(removeButton.parentNode);
 
-        removeButton.addEventListener("click", (event) => {
+        removeButton.addEventListener("click", async (event) => {
+            event.target.parentNode.classList.add("animate__zoomOut");
+
             const index = pickedJobs.indexOf(job.title);
 
             pickedJobs.splice(index, 1);
             jobsData.splice(index, 1);
-
-            event.target.parentNode.remove();
+            pickedJobsCards.splice(index, 1);
 
             jobs_chart.data = jobData;
             jobs_chart.render();
+
+            await new Promise(r => setTimeout(r, 1000));
+            event.target.parentNode.remove();
         });
 
         jobs_chart.destroy();

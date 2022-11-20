@@ -12,6 +12,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.min.css">
   <link rel="stylesheet" href="./css/modifications.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
@@ -42,7 +43,10 @@
                     <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
-                  <a href="https://developers.teleport.org/" target="_blank"><span class="icon star"></span>Teleport API</a>
+                  <a href="https://developers.teleport.org/" target="_blank"><span class="icon message"></span>Teleport API</a>
+                </li>
+                <li>
+                  <a href="https://animate.style/" target="_blank"><span class="icon star"></span>CSS Animations</a>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
@@ -80,7 +84,7 @@
   </div>
 </nav>
     <!-- ! Main -->
-    <main class="main users chart-page" id="skip-target">
+    <main class="main users chart-page animate__animated animate__slideInDown" id="skip-target">
       <div class="container">
         <h2 class="main-title">Dashboard</h2>
         <div class="row stat-cards">
@@ -102,7 +106,7 @@
         <div class="row">
           <div class="col-xl-6">
             <div class="chart">
-              <div id="scores-chart"></div>
+              <div class="animate__animated" id="scores-chart"></div>
             </div>
           </div>
           <div class="col-xl-6">
