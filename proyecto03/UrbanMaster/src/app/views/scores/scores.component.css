@@ -1,0 +1,25 @@
+
+#iframe-container {
+    height: 1500px;
+    overflow: hidden;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 1em 0;
+    gap: 0.5em;
+}
+  
+.radio-button {
+    margin: 0.2em;
+}
+
+@media screen and (max-width: 500px) {
+    #iframe-container {
+        height: 1500px; 
+    }
+}

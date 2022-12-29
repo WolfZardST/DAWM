@@ -1,0 +1,22 @@
+<a class="back-button" mat-raised-button routerLink="/picker">Back</a>
+<div class="container text-center">
+    <h1 class="city-name">{{ name.toUpperCase().replaceAll('-', ' ') }}</h1>
+    <div class="row justify-content-center">
+        <div class="col-9 summary" [innerHTML]="summary"></div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-4 justify-content-center buttons">
+        <div class="col-9 button-container">
+            <a routerLink="/{{ name.toLowerCase().replaceAll(' ', '-') }}/explore"><img src="../../../assets/icons/earth.svg" class="button"></a>
+            Explore
+        </div>
+        <div class="col-9 button-container">
+            <a routerLink="/{{ name.toLowerCase().replaceAll(' ', '-') }}/statistics"><img src="../../../assets/icons/bar-chart.svg" class="button"></a>
+            Statistics
+        </div>
+    </div>
+    <div class="row foot"></div>
+</div>
+
+
+
+

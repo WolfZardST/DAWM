@@ -1,0 +1,28 @@
+
+.container {
+    margin-top: 4em;
+}
+
+.summary {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    line-height: 1.6;
+}
+
+.buttons {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+}
+
+.button {
+    padding: 1em;
+    transition: 0.5s;
+}
+
+.button:hover {
+    scale: 1.1;
+}
+
+.button-container {
+    margin-bottom: 1em;
+}

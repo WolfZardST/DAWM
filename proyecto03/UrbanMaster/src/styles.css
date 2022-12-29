@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --color-1: #1C315E;
+    --color-2: #227C70;
+    --color-3: #88A47C;
+    --color-4: #E6E2C3;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.foot {
+    height: 10em;
+}
+
+.back-button {
+    margin: 1em;
+}
+
+.city-name {
+    font-family: 'Poppins', sans-serif!important;
+    font-size: 4em!important;
+    margin-bottom: 0.5em!important;
+    line-height: 1.15!important;
+}

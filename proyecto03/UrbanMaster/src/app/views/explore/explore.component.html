@@ -1,0 +1,10 @@
+<a class="back-button" mat-raised-button routerLink="/{{ name }}">Back</a>
+<div class="container text-center">
+    <h1 class="city-name">Explore {{ name.toUpperCase().replaceAll('-', ' ') }}</h1>
+    <div class="row justify-content-center">
+        <div class="explore-map col">
+            <google-map width="90vw" [height]="600" id="map"></google-map>
+        </div>
+    </div>
+    <div class="row foot"></div>
+</div>

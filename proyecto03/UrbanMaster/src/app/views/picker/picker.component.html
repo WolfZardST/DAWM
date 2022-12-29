@@ -1,0 +1,21 @@
+<div class="container text-center">
+    <h1>Pick an urban area:</h1>
+    <div class="row justify-content-center">
+        <div class="col-9 col-lg-4">
+            <div id="search-box">
+                <mat-icon svgIcon="search"></mat-icon>
+                <input type="text" placeholder="Search..." (keyup)="onKey($event)">
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-9">
+            <ng-container *ngFor='let urban_area of urban_areas'>
+                <div *ngIf='urban_area.display' class="urban-area animate__animated animate__fadeIn">
+                    <a routerLink="/{{ urban_area.name.toLowerCase().replaceAll(' ', '-') }}"><p>{{ urban_area.name.toUpperCase() }}</p></a>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row foot"></div>
+</div>
